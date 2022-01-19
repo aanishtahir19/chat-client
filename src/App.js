@@ -8,7 +8,6 @@ function App() {
     console.log(process.env.REACT_APP_NAME)
     return ( 
        <>
-       I am in App.js
        <Routes>
            <Route path="/chat/:room/:name" element={<Chat/>}/>
            <Route path="/"exact element={<Join/>}/>

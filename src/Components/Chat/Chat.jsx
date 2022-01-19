@@ -47,6 +47,7 @@ function Chat() {
   };
   return (
     <div className='bg-purple-700 w-screen h-screen py-20'>
+      I am in Chat
       <div className='lg:w-2/4 mx-auto border-2 border-black '>
         <ul className='p-3'>
           {messages.length > 0 &&

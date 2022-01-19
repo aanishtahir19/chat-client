@@ -4,10 +4,10 @@
   "repository": "https://github.com/aanishtahir19/react-app.git",
   "author": "aanishtahir19 <aanishtahir19@gmail.com>",
   "license": "MIT",
-  "homepage": ".",
+  "homepage":".",
   "scripts": {
-    "dev": "parcel public/index.html",
-    "build": "rm -rf build && rm -rf dist &&  parcel build public/index.html --public-url ./ --dist-dir build && cp ./public/_redirects ./build"
+    "dev": "parcel src/index.html",
+    "build": " parcel build src/index.html --public-url . && cp public/_redirects dist/"
   },
   "dependencies": {
     "react": "^17.0.2",

@@ -47,7 +47,7 @@ function Chat() {
   };
   return (
     <div className='bg-purple-700 w-screen h-screen py-20'>
-      <div className='lg:w-2/4 mx-auto border-2 border-black '>
+      <div className='lg:w-2/4 mx-auto border-2 border-black max-w-[500px]'>
         <ul className='p-3'>
           {messages.length > 0 &&
             messages.map((msg, index) => (

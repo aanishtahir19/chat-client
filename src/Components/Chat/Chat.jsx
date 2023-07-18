@@ -2,26 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import io from 'socket.io-client';
 let socket;
-// const messages = [
-//   { user: 'Aanish', text: 'Hello' },
-//   { user: 'Aanish', text: 'Hello' },
-//   { user: 'Aanish', text: 'Hello' },
-//   { user: 'Aanish', text: 'Hello' },
-// ];
-function Chat() {
+function Chat({auth}) {
   const { room, name } = useParams();
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
   const SERVER_URL = process.env.REACT_APP_NAME;
-  useEffect(()=>{
-    (async function(){
-      const response = await (await fetch(SERVER_URL)).json;
-      console.log(response)
-    })()
-  },[])
+
   useEffect(() => {
-    socket = io(SERVER_URL);
-    console.log(socket);
+    socket = io(SERVER_URL, {query:{token:auth.Token}});
     socket.emit('join', { name, room }, (error) => {
       console.log(error);
     });

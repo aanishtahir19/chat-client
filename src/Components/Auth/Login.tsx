@@ -1,6 +1,7 @@
 //  similar to register page create a login page with email and password in react and tailwind with api call to login. login status is stored in parent useState and is being passed as prop
 import React, {useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Server from '../../constants'
 
 const Login = ({auth, setAuth}) => {
     const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const Login = ({auth, setAuth}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const loginData = await fetch(`${process.env.REACT_APP_NAME}api/login`, {
+            const loginData = await fetch(`${Server}api/login`, {
                 method: "POST",
                 body: JSON.stringify({
                     Email:email,

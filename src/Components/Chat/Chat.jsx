@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import io from 'socket.io-client';
+import SERVER_URL from '../../constants'
 let socket;
 function Chat({auth}) {
   const { room, name } = useParams();
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
-  const SERVER_URL = process.env.REACT_APP_NAME;
 
   useEffect(() => {
     socket = io(SERVER_URL, {query:{token:auth.Token}});

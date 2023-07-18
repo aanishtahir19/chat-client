@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Server from '../../constants'
 
 
 const Register = ({auth, setAuth}) => {
@@ -13,7 +14,7 @@ const Register = ({auth, setAuth}) => {
         e.preventDefault();
         try {
             // set a post request to process.env.REACT_APP_NAME + api/register with email, username and password
-            const registerData = await fetch(`${process.env.REACT_APP_NAME}api/register`, {
+            const registerData = await fetch(`${Server}api/register`, {
                 method: "POST",
                 body: JSON.stringify({
                     Email:email,
